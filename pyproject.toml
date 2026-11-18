@@ -5,15 +5,30 @@ build-backend = "hatchling.build"
 [project]
 name = "flashcard-app"
 version = "0.1.0"
-description = "A flashcard learning app with spaced repetition (SM-2 algorithm)."
+description = "Local flashcard CLI for creating decks, adding cards, and viewing real study counts."
 readme = "README.md"
 requires-python = ">=3.8"
 license = { text = "MIT" }
 authors = [{ name = "Xu Jiaqi", email = "jiaqixu12138@gmail.com" }]
 dependencies = ["click>=8.0.0", "rich>=13.0.0"]
 
+[project.optional-dependencies]
+dev = ["pytest>=7.4", "ruff>=0.6"]
+
 [project.scripts]
 flashcards = "flashcard_app.cli:main"
 
 [project.urls]
 Homepage = "https://github.com/Master-626/flashcard-app"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+target-version = "py38"
+line-length = 100
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
