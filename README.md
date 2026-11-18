@@ -105,7 +105,7 @@ ruff check .
 pytest
 ```
 
-`pytest` reads `src/` via `pythonpath`, and the CI workflow also installs the package before running Ruff and pytest on Python 3.8, 3.9, 3.10, 3.11, 3.12, and 3.13.
+`pytest` reads `src/` via `pythonpath`. CI installs the package, then runs Ruff and pytest on Python 3.8, 3.9, 3.10, 3.11, 3.12, and 3.13. Python 3.8 and 3.9 run on `ubuntu-22.04`; newer versions run on `ubuntu-latest`.
 
 ## License
 
